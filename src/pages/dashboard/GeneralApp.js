@@ -5,11 +5,11 @@ import { Box, Stack, Typography } from "@mui/material";
 import { Link, useSearchParams } from "react-router-dom";
 import ChatComponent from "./Conversation";
 import Chats from "./Chats";
-import Contact from "../../sections/dashboard/Contact";
+import Contact from "../../sections/Dashboard/Contact";
 import NoChat from "../../assets/Illustration/NoChat";
 import { useSelector } from "react-redux";
-import StarredMessages from "../../sections/dashboard/StarredMessages";
-import Media from "../../sections/dashboard/SharedMessages";
+import StarredMessages from "../../sections/Dashboard/StarredMessages";
+import Media from "../../sections/Dashboard/SharedMessages";
 
 const GeneralApp = () => {
   const [searchParams] = useSearchParams();
@@ -20,7 +20,7 @@ const GeneralApp = () => {
 
   return (
     <>
-      <Stack direction="row" sx={{ width: "100%" }}>
+      <Stack direction='row' sx={{ width: "100%" }}>
         <Chats />
         <Box
           sx={{
@@ -39,25 +39,24 @@ const GeneralApp = () => {
                 : "6px solid #0162C4",
           }}
         >
-          {chat_type === "individual" &&
-          room_id !== null ? (
+          {chat_type === "individual" && room_id !== null ? (
             <ChatComponent />
           ) : (
             <Stack
               spacing={2}
               sx={{ height: "100%", width: "100%" }}
-              alignItems="center"
+              alignItems='center'
               justifyContent={"center"}
             >
               <NoChat />
-              <Typography variant="subtitle2">
+              <Typography variant='subtitle2'>
                 Select a conversation or start a{" "}
                 <Link
                   style={{
                     color: theme.palette.primary.main,
                     textDecoration: "none",
                   }}
-                  to="/"
+                  to='/'
                 >
                   new one
                 </Link>

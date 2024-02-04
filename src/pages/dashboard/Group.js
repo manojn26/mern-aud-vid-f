@@ -17,21 +17,21 @@ import {
   SearchIconWrapper,
   StyledInputBase,
 } from "../../components/Search";
-import CreateGroup from "../../sections/dashboard/CreateGroup";
+import CreateGroup from "../../sections/Dashboard/CreateGroup";
 
 const Group = () => {
   const [openDialog, setOpenDialog] = useState(false);
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
-  }
+  };
   const handleOpenDialog = () => {
     setOpenDialog(true);
-  }
+  };
   const theme = useTheme();
   return (
     <>
-      <Stack direction="row" sx={{ width: "100%" }}>
+      <Stack direction='row' sx={{ width: "100%" }}>
         {/* Left */}
 
         <Box
@@ -51,18 +51,18 @@ const Group = () => {
           <Stack p={3} spacing={2} sx={{ maxHeight: "100vh" }}>
             <Stack
               alignItems={"center"}
-              justifyContent="space-between"
-              direction="row"
+              justifyContent='space-between'
+              direction='row'
             >
-              <Typography variant="h5">Groups</Typography>
+              <Typography variant='h5'>Groups</Typography>
             </Stack>
             <Stack sx={{ width: "100%" }}>
               <Search>
                 <SearchIconWrapper>
-                  <MagnifyingGlass color="#709CE6" />
+                  <MagnifyingGlass color='#709CE6' />
                 </SearchIconWrapper>
                 <StyledInputBase
-                  placeholder="Search…"
+                  placeholder='Search…'
                   inputProps={{ "aria-label": "search" }}
                 />
               </Search>
@@ -72,7 +72,7 @@ const Group = () => {
               alignItems={"center"}
               direction={"row"}
             >
-              <Typography variant="subtitle2" sx={{}} component={Link}>
+              <Typography variant='subtitle2' sx={{}} component={Link}>
                 Create New Group
               </Typography>
               <IconButton onClick={handleOpenDialog}>
@@ -83,14 +83,14 @@ const Group = () => {
             <Stack sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}>
               <SimpleBarStyle timeout={500} clickOnTrack={false}>
                 <Stack spacing={2.4}>
-                  <Typography variant="subtitle2" sx={{ color: "#676667" }}>
+                  <Typography variant='subtitle2' sx={{ color: "#676667" }}>
                     Pinned
                   </Typography>
                   {/* Chat List */}
                   {ChatList.filter((el) => el.pinned).map((el, idx) => {
                     return <ChatElement {...el} />;
                   })}
-                  <Typography variant="subtitle2" sx={{ color: "#676667" }}>
+                  <Typography variant='subtitle2' sx={{ color: "#676667" }}>
                     All Chats
                   </Typography>
                   {/* Chat List */}
@@ -105,7 +105,9 @@ const Group = () => {
 
         {/* Right */}
       </Stack>
-      {openDialog && <CreateGroup open={openDialog} handleClose={handleCloseDialog} />}
+      {openDialog && (
+        <CreateGroup open={openDialog} handleClose={handleCloseDialog} />
+      )}
     </>
   );
 };

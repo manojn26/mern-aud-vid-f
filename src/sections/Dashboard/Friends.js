@@ -6,10 +6,14 @@ import {
   FetchFriends,
   FetchUsers,
 } from "../../redux/slices/app";
-import { FriendElement, FriendRequestElement, UserElement } from "../../components/UserElement";
+import {
+  FriendElement,
+  FriendRequestElement,
+  UserElement,
+} from "../../components/UserElement";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
+  return <Slide direction='up' ref={ref} {...props} />;
 });
 
 const UsersList = () => {
@@ -76,20 +80,20 @@ const Friends = ({ open, handleClose }) => {
   return (
     <Dialog
       fullWidth
-      maxWidth="xs"
+      maxWidth='xs'
       open={open}
       TransitionComponent={Transition}
       keepMounted
       onClose={handleClose}
-      aria-describedby="alert-dialog-slide-description"
+      aria-describedby='alert-dialog-slide-description'
       sx={{ p: 4 }}
     >
       {/* <DialogTitle>{"Friends"}</DialogTitle> */}
       <Stack p={2} sx={{ width: "100%" }}>
         <Tabs value={value} onChange={handleChange} centered>
-          <Tab label="Explore" />
-          <Tab label="Friends" />
-          <Tab label="Requests" />
+          <Tab label='Explore' />
+          <Tab label='Friends' />
+          <Tab label='Requests' />
         </Tabs>
       </Stack>
       <DialogContent>

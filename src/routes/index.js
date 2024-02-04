@@ -27,7 +27,7 @@ export default function Router() {
         { path: "register", element: <RegisterPage /> },
         { path: "reset-password", element: <ResetPasswordPage /> },
         { path: "new-password", element: <NewPasswordPage /> },
-        {path: "verify", element: <VerifyPage /> },
+        { path: "verify", element: <VerifyPage /> },
       ],
     },
     {
@@ -43,14 +43,14 @@ export default function Router() {
         { path: "contact", element: <Contact /> },
         { path: "profile", element: <Profile /> },
 
-        {path: "call", element: <CallPage />},
-        
+        { path: "call", element: <CallPage /> },
+
         { path: "404", element: <Page404 /> },
-        { path: "*", element: <Navigate to="/404" replace /> },
+        { path: "*", element: <Navigate to='/404' replace /> },
       ],
     },
 
-    { path: "*", element: <Navigate to="/404" replace /> },
+    { path: "*", element: <Navigate to='/404' replace /> },
   ]);
 }
 
@@ -63,7 +63,7 @@ const Conversation = Loadable(
 const Chats = Loadable(lazy(() => import("../pages/dashboard/Chats")));
 const Group = Loadable(lazy(() => import("../pages/dashboard/Group")));
 const CallPage = Loadable(lazy(() => import("../pages/dashboard/Call")));
-const Contact = Loadable(lazy(() => import("../sections/dashboard/Contact")));
+const Contact = Loadable(lazy(() => import("../sections/Dashboard/Contact")));
 const Page404 = Loadable(lazy(() => import("../pages/Page404")));
 
 const LoginPage = Loadable(lazy(() => import("../pages/auth/Login")));

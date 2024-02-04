@@ -17,7 +17,7 @@ import {
 import { useTheme } from "@mui/material/styles";
 import { SimpleBarStyle } from "../../components/Scrollbar";
 import { CallLogElement } from "../../components/CallElement";
-import StartCall from "../../sections/dashboard/StartCall";
+import StartCall from "../../sections/Dashboard/StartCall";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchCallLogs } from "../../redux/slices/app";
 
@@ -38,7 +38,7 @@ const Call = () => {
   const theme = useTheme();
   return (
     <>
-      <Stack direction="row" sx={{ width: "100%" }}>
+      <Stack direction='row' sx={{ width: "100%" }}>
         {/* Left */}
 
         <Box
@@ -58,19 +58,19 @@ const Call = () => {
           <Stack p={3} spacing={2} sx={{ maxHeight: "100vh" }}>
             <Stack
               alignItems={"center"}
-              justifyContent="space-between"
-              direction="row"
+              justifyContent='space-between'
+              direction='row'
             >
-              <Typography variant="h5">Call Log</Typography>
+              <Typography variant='h5'>Call Log</Typography>
             </Stack>
 
             <Stack sx={{ width: "100%" }}>
               <Search>
                 <SearchIconWrapper>
-                  <MagnifyingGlass color="#709CE6" />
+                  <MagnifyingGlass color='#709CE6' />
                 </SearchIconWrapper>
                 <StyledInputBase
-                  placeholder="Search…"
+                  placeholder='Search…'
                   inputProps={{ "aria-label": "search" }}
                 />
               </Search>
@@ -81,7 +81,7 @@ const Call = () => {
               alignItems={"center"}
               direction={"row"}
             >
-              <Typography variant="subtitle2" sx={{}} component={Link}>
+              <Typography variant='subtitle2' sx={{}} component={Link}>
                 Start a conversation
               </Typography>
               <IconButton onClick={handleOpenDialog}>

@@ -22,8 +22,8 @@ import {
 
 import { useTheme } from "@mui/material/styles";
 import { faker } from "@faker-js/faker";
-import ThemeDialog from "../../../sections/dashboard/Settings/ThemeDialog";
-import ShortcutDialog from "../../../sections/dashboard/Settings/ShortcutDialog";
+import ThemeDialog from "../../../sections/Dashboard/Settings/ThemeDialog";
+import ShortcutDialog from "../../../sections/Dashboard/Settings/ShortcutDialog";
 
 const Settings = () => {
   const theme = useTheme();
@@ -100,12 +100,12 @@ const Settings = () => {
 
   return (
     <>
-      <Stack direction="row" sx={{ width: "100%" }}>
+      <Stack direction='row' sx={{ width: "100%" }}>
         {/* LeftPane */}
         <Box
           sx={{
             overflowY: "scroll",
-     
+
             height: "100vh",
             width: 320,
             backgroundColor:
@@ -116,26 +116,25 @@ const Settings = () => {
             boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
           }}
         >
-          
           <Stack p={4} spacing={5}>
             {/* Header */}
-            <Stack direction="row" alignItems={"center"} spacing={3}>
+            <Stack direction='row' alignItems={"center"} spacing={3}>
               <IconButton>
                 <CaretLeft size={24} color={"#4B4B4B"} />
               </IconButton>
 
-              <Typography variant="h5">Settings</Typography>
+              <Typography variant='h5'>Settings</Typography>
             </Stack>
 
             {/* Profile */}
-            <Stack direction="row" spacing={3}>
+            <Stack direction='row' spacing={3}>
               <Avatar
                 src={faker.image.avatar()}
                 sx={{ height: 56, width: 56 }}
               />
               <Stack spacing={0.5}>
-                <Typography variant="article">{`${faker.name.firstName()} ${faker.name.lastName()}`}</Typography>
-                <Typography variant="body2">{faker.random.words()}</Typography>
+                <Typography variant='article'>{`${faker.name.firstName()} ${faker.name.lastName()}`}</Typography>
+                <Typography variant='body2'>{faker.random.words()}</Typography>
               </Stack>
             </Stack>
             {/* List */}
@@ -148,9 +147,9 @@ const Settings = () => {
                       sx={{ cursor: "pointer" }}
                       spacing={2}
                     >
-                      <Stack alignItems={"center"} direction="row" spacing={2}>
+                      <Stack alignItems={"center"} direction='row' spacing={2}>
                         {icon}
-                        <Typography variant="body2">{title}</Typography>
+                        <Typography variant='body2'>{title}</Typography>
                       </Stack>
                       {key !== 7 && <Divider />}
                     </Stack>
@@ -176,8 +175,12 @@ const Settings = () => {
       {openTheme && (
         <ThemeDialog open={openTheme} handleClose={handleCloseTheme} />
       )}
-      {openShortcuts && <ShortcutDialog open={openShortcuts} handleClose={handleCloseShortcuts} /> }
-      
+      {openShortcuts && (
+        <ShortcutDialog
+          open={openShortcuts}
+          handleClose={handleCloseShortcuts}
+        />
+      )}
     </>
   );
 };

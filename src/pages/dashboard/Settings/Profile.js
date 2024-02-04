@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
 import { Box, IconButton, Stack, Typography } from "@mui/material";
 import { CaretLeft } from "phosphor-react";
-import ProfileForm from "../../../sections/dashboard/Settings/ProfileForm";
+import ProfileForm from "../../../sections/Dashboard/Settings/ProfileForm";
 import { useDispatch } from "react-redux";
 import { FetchUserProfile } from "../../../redux/slices/app";
 
 const Profile = () => {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     dispatch(FetchUserProfile());
   }, []);
 
   return (
     <>
-      <Stack direction="row" sx={{ width: "100%" }}>
+      <Stack direction='row' sx={{ width: "100%" }}>
         {/* Left Pane */}
         <Box
           sx={{
@@ -32,12 +32,12 @@ const Profile = () => {
         >
           <Stack p={4} spacing={5}>
             {/* Header */}
-            <Stack direction="row" alignItems={"center"} spacing={3}>
+            <Stack direction='row' alignItems={"center"} spacing={3}>
               <IconButton>
                 <CaretLeft size={24} color={"#4B4B4B"} />
               </IconButton>
 
-              <Typography variant="h5">Profile</Typography>
+              <Typography variant='h5'>Profile</Typography>
             </Stack>
 
             {/* Profile Edit Form */}

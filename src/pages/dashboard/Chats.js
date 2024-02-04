@@ -24,7 +24,7 @@ import {
   SearchIconWrapper,
   StyledInputBase,
 } from "../../components/Search";
-import Friends from "../../sections/dashboard/Friends";
+import Friends from "../../sections/Dashboard/Friends";
 import { socket } from "../../socket";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchDirectConversations } from "../../redux/slices/conversation";
@@ -37,7 +37,9 @@ const Chats = () => {
 
   const dispatch = useDispatch();
 
-  const {conversations} = useSelector((state) => state.conversation.direct_chat);
+  const { conversations } = useSelector(
+    (state) => state.conversation.direct_chat
+  );
 
   useEffect(() => {
     socket.emit("get_direct_conversations", { user_id }, (data) => {
@@ -80,12 +82,12 @@ const Chats = () => {
         <Stack p={3} spacing={2} sx={{ maxHeight: "100vh" }}>
           <Stack
             alignItems={"center"}
-            justifyContent="space-between"
-            direction="row"
+            justifyContent='space-between'
+            direction='row'
           >
-            <Typography variant="h5">Chats</Typography>
+            <Typography variant='h5'>Chats</Typography>
 
-            <Stack direction={"row"} alignItems="center" spacing={1}>
+            <Stack direction={"row"} alignItems='center' spacing={1}>
               <IconButton
                 onClick={() => {
                   handleOpenDialog();
@@ -102,18 +104,18 @@ const Chats = () => {
           <Stack sx={{ width: "100%" }}>
             <Search>
               <SearchIconWrapper>
-                <MagnifyingGlass color="#709CE6" />
+                <MagnifyingGlass color='#709CE6' />
               </SearchIconWrapper>
               <StyledInputBase
-                placeholder="Search…"
+                placeholder='Search…'
                 inputProps={{ "aria-label": "search" }}
               />
             </Search>
           </Stack>
           <Stack spacing={1}>
-            <Stack direction={"row"} spacing={1.5} alignItems="center">
+            <Stack direction={"row"} spacing={1.5} alignItems='center'>
               <ArchiveBox size={24} />
-              <Button variant="text">Archive</Button>
+              <Button variant='text'>Archive</Button>
             </Stack>
             <Divider />
           </Stack>
@@ -127,13 +129,15 @@ const Chats = () => {
                 {/* {ChatList.filter((el) => el.pinned).map((el, idx) => {
                   return <ChatElement {...el} />;
                 })} */}
-                <Typography variant="subtitle2" sx={{ color: "#676667" }}>
+                <Typography variant='subtitle2' sx={{ color: "#676667" }}>
                   All Chats
                 </Typography>
                 {/* Chat List */}
-                {conversations.filter((el) => !el.pinned).map((el, idx) => {
-                  return <ChatElement {...el} />;
-                })}
+                {/* {conversations
+                  .filter((el) => !el.pinned)
+                  .map((el, idx) => {
+                    return <ChatElement {...el} />;
+                  })} */}
               </Stack>
             </SimpleBarStyle>
           </Stack>
